@@ -9,7 +9,7 @@ class Voiture
 
     public function __construct()
     {
-        echo 'Construct';
+        echo 'Construct. ';
     }
 
     public function acceler()
@@ -20,6 +20,9 @@ class Voiture
     public static function accelerStatic()
     {
         return 'Vroum Static!';
+    }
+    public function __destruct(){
+        echo 'Couleur de la voiture: ' . $this->couleur;
     }
 };
 // il faut créer une fonction pour pouvoir acceder au varbiable 'private' 
@@ -32,4 +35,6 @@ class Voiture
 
 //echo 'Ma voiture a ' . Voiture::ROUE . ' roues.';
 //echo Voiture::$jante;
-echo Voiture::accelerStatic();
+//echo Voiture::accelerStatic();
+$sport=new Voiture();
+
