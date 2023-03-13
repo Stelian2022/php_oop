@@ -2,16 +2,21 @@
 
 class Voiture
 {
-    public $couleur='rouge';
+    //public $couleur='rouge';
     //private $couleur='rouge';
-    const ROUE=4;
+    private $couleur;
     public static $jante='metal';
 
     public function __construct()
     {
-        echo 'Construct. ';
+        //echo 'Construct. ';
     }
-
+   public function setCouleur($couleurProp){
+    $this->couleur=$couleurProp;
+   }
+   public function getCouleur(){
+    return $this->couleur;
+   }
     public function acceler()
     {
        // echo 'La voiture accelere';
@@ -37,4 +42,6 @@ class Voiture
 //echo Voiture::$jante;
 //echo Voiture::accelerStatic();
 $sport=new Voiture();
+$sport->setCouleur('Jaune');
+echo $sport->getCouleur();
 
