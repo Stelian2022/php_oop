@@ -1,5 +1,6 @@
 <?php
 // require_once './classes/Voiture.php';
+
 // require_once './classes/Fruit.php';
 // require_once './classes/User.php';
 // function my_autoloader($class)
