@@ -1,44 +1,17 @@
 <?php
-
-class Voiture
-{
-    //public $couleur='rouge';
-    //private $couleur='rouge';
-    private $couleur;
-    public $vitesse;
-    public static $jante = 'metal';
-
-    public function __construct()
-    {
-        //echo 'Construct. ';
-    }
-    public function setCouleur($couleurProp)
-    {
-        $this->couleur = $couleurProp;
-    }
-    public function getCouleur()
-    {
-        return $this->couleur;
-    }
-    public function acceler($vitesseProp): int
-    {
-        // echo 'La voiture accelere';
-        //return 'Vroum!';
-       return $this->vitesse = $vitesseProp + 10;
-    }
-
-    public static function accelerStatic()
-    {
-        return 'Vroum Static!';
-    }
-    public function __destruct()
-    {
-        //echo 'Couleur de la voiture: ' . $this->couleur;
-    }
-};
+// require_once './classes/Voiture.php';
+// require_once './classes/Fruit.php';
+// require_once './classes/User.php';
+// function my_autoloader($class)
+// {
+//     include 'classes/' .  $class . '.php';
+// }
+spl_autoload_register(function ($class) {
+    include 'classes/' . $class . '.php';
+});
 // il faut créer une fonction pour pouvoir acceder au varbiable 'private' 
-//$citadine=new Voiture();
-//var_dump($citadine);
+//  $citadine=new Voiture();
+//  var_dump($citadine);
 
 //echo $citadine->couleur;
 //$citadine->acceler(); --uriliset avec echo dans la fonction
@@ -54,17 +27,45 @@ class Voiture
 // $sport = new Voiture();
 // echo $sport->acceler(30);
 
-class Fruit
-{
-    private $nomFruit;
-    public function __get($nom){
-       // return "L'attribut (propriete) $nom est innacessible";
-        return $this->nomFruit;
-    }
-    public function __set($nom,$val){
-        $this ->$nom=$val;
-    }
-}
-$pomme=new Fruit();
-$pomme->nomFruit='eat eat eat' . ' Pomme Golden';
-echo $pomme->nomFruit;
+
+// $pomme=new Fruit();
+// $pomme->nomFruit='eat eat eat' . ' Pomme Golden';
+// echo $pomme->nomFruit;
+
+// class Maclasse
+// {
+//     private $str;
+
+//     public function __construct($param)
+//     {
+//         $this->str = $param;
+//     }
+//     public function __toString()
+//     {
+//         return $this->str;
+//     }
+// }
+// $objet =new Maclasse('Bonjour');
+// echo $objet;
+
+
+// $bill=new User('oi oi');
+// echo $bill->getName();
+
+//l'heritage
+
+//   $user1 = new Admin();
+//   var_dump($user1->method2());
+// abstract class A
+// {
+//     public function methode()
+//     {
+//         echo "Bonjour Abstrac";
+//     }
+// }
+// class B extends A
+// {
+// }
+
+// $objet = new B();
+// $objet->methode();
